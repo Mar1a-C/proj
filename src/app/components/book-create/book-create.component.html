@@ -1,0 +1,25 @@
+<h2>Add a New Book</h2>
+<form (ngSubmit)="createBook()">
+  <label>Title:</label>
+  <input type="text" [(ngModel)]="book.title" name="title" required />
+
+  <label>Author:</label>
+  <input type="text" [(ngModel)]="book.author" name="author" required />
+
+  <label>Published Year:</label>
+  <input type="number" [(ngModel)]="book.publishedYear" name="publishedYear" required />
+
+  <label>Publisher:</label>
+  <input type="text" [(ngModel)]="book.publisher" name="publisher" required />
+
+  <label>Condition:</label>
+  <select [(ngModel)]="book.condition" name="condition">
+    <option value="New">New</option>
+    <option value="Good">Good</option>
+    <option value="Fair">Fair</option>
+    <option value="Poor">Poor</option>
+  </select>
+
+  <button type="submit">Add Book</button>
+  <a [routerLink]="['/books']">Cancel</a>
+</form>

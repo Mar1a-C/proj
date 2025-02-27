@@ -1,0 +1,27 @@
+<h2>{{ publisher?.name }}</h2>
+
+<p><strong>Country:</strong> {{ publisher?.country || 'Unknown' }}</p>
+<p><strong>Founded Year:</strong> {{ publisher?.foundedYear || 'N/A' }}</p>
+<p><strong>Status:</strong> {{ publisher?.active ? 'Active' : 'Inactive' }}</p>
+
+<h3>Books Published:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Published Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of publisher?.books">
+      <td>
+        <a [routerLink]="['/books', book.id]">{{ book.title }}</a>
+      </td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.publishedYear }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<a [routerLink]="['/publishers']">⬅ Back to Publishers</a>

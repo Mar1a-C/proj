@@ -1,0 +1,11 @@
+<h2>{{ book?.title }}</h2>
+<p><strong>Author:</strong> {{ book?.author }}</p>
+<p><strong>Published Year:</strong> {{ book?.publishedYear }}</p>
+<p><strong>Publisher:</strong> {{ book?.publisher }}</p>
+<p><strong>Categories:</strong> {{ book?.categories.join(', ') }}</p>
+<p><strong>Status:</strong> {{ book?.available ? 'Available' : 'Borrowed' }}</p>
+<p><strong>Condition:</strong> {{ book?.condition }}</p>
+<p><strong>Language:</strong> {{ book?.language }}</p>
+
+<a [routerLink]="['/books', book.id, 'edit']">Edit</a>
+<button (click)="deleteBook(book.id)">Delete</button>

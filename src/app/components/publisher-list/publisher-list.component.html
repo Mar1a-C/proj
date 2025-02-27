@@ -1,0 +1,26 @@
+<h2>Publishers</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Founded Year</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let publisher of publishers">
+      <td>{{ publisher.id }}</td>
+      <td>{{ publisher.name }}</td>
+      <td>{{ publisher.country || 'Unknown' }}</td>
+      <td>{{ publisher.foundedYear || 'N/A' }}</td>
+      <td>{{ publisher.active ? 'Active' : 'Inactive' }}</td>
+      <td>
+        <button [routerLink]="['/publishers', publisher.id]">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

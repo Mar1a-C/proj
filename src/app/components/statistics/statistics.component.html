@@ -1,0 +1,21 @@
+<h2>📊 Library Statistics</h2>
+
+<p><strong>Total Books:</strong> {{ totalBooks }}</p>
+<p><strong>Available Books:</strong> {{ availableBooks }}</p>
+<p><strong>Borrowed Books:</strong> {{ borrowedBooks }}</p>
+
+<h3>📚 Books by Category</h3>
+<ul>
+  <li *ngFor="let category of categoryKeys">
+    {{ category }}: {{ booksByCategory[category] }} books
+  </li>
+</ul>
+
+<h3>🌍 Books by Language</h3>
+<ul>
+  <li *ngFor="let language of languageKeys">
+    {{ language }}: {{ booksByLanguage[language] }} books
+  </li>
+</ul>
+
+<a [routerLink]="['/books']">⬅ Back to Books</a>
